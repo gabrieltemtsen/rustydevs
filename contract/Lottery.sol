@@ -10,7 +10,7 @@ contract AvaxLottery{
         InProgress,
         Ended
     }
-    
+                     
     TicketStatus public ticket_status ;
 
      // Update ticket status
@@ -66,8 +66,14 @@ contract AvaxLottery{
         
     }
 
+    // modifier to check the length of guessed input is 6
+    modifier checkLengthOfTicket(uint[6] memory numbers) {
+        require(numbers.length != 0, "Inputted Guess Must be 6 in length");
+        _;
+    }
+
      // Function to create ticket by the owner of the contract
-    function create_ticket (string memory _text, uint[6] memory _numbers) public onlyOwner{
+    function create_ticket (string memory _text, uint[6] memory _numbers) public onlyOwner checkLengthOfTicket(_numbers){
         ticket_info.push(TicketInfo( _text, _numbers));
     }
 
