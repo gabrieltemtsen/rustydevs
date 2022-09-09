@@ -5,9 +5,30 @@ contract AvaxLottery{
     address payable public owner ;
     uint public prize_pool;
 
+    enum TicketStatus {
+        Pending,
+        InProgress,
+        Ended
+    }
+    
+    TicketStatus public ticket_status ;
+
+    struct TicketInfo {
+        string title;
+        uint[6] public generated_numbers; // array of random generated numbers
+    }
+
+    TicketInfo[] public numbers;
+
+    struct User {
+        uint id;
+        uint[6] ticket;
+        uint ticket_type;
+    }
+
     constructor() {
         // Set the transaction sender as the owner of the contract.
-        owner = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
+        owner = payable(msg.sender());
     }
 
     modifier onlyOwner() {
@@ -30,8 +51,10 @@ contract AvaxLottery{
         
     }
 
-    // array of random generated numbers
-    uint[] public generated_numbers;
+    // Function to create ticket by the owner of the contract
+    function create_ticket (string memory _text, uint[] memory _numbers) public onlyOwner() returns (TicketInfo){
+        numbers.push(TicketInfo(_numbers, _text));
+    }
 
     function get_generated_numbers() public view returns (uint[] memory) {
         return generated_numbers;
