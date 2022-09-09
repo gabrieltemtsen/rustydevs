@@ -13,6 +13,16 @@ contract AvaxLottery{
     
     TicketStatus public ticket_status ;
 
+     // Update ticket status
+    function set_ticket_status(TicketStatus _status) public onlyOwner {
+        ticket_status = _status;
+    }
+
+    // resets the enum to pending
+    function reset_ticket_status() public onlyOwner{
+        delete status;
+    }
+
     struct TicketInfo {
         string title;
         uint[6] generated_numbers; // array of random generated numbers
