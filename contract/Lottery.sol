@@ -20,7 +20,12 @@ contract AvaxLottery{
 
     // resets the enum to pending
     function reset_ticket_status() public onlyOwner{
-        delete status;
+        delete ticket_status;
+    }
+
+    // get the status of the ticket
+    function get_ticket_status() public view returns (TicketStatus) {
+        return ticket_status;
     }
 
     struct TicketInfo {
