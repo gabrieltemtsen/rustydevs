@@ -10,6 +10,12 @@ async function main() {
   const AvaxLottery = await hre.ethers.getContractFactory("AvaxLottery");
   const lottery = await AvaxLottery.deploy();
 
+  const [deployer] = await ethers.getSigners();
+
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  console.log("Account balance:", (await deployer.getBalance()).toString());
+
   await lottery.deployed();
 
   console.log(`deployed to ${lottery.address}`);
