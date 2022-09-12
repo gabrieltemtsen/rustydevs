@@ -7,7 +7,6 @@
 const hre = require("hardhat");
 
 async function main() {
-
   const AvaxLottery = await hre.ethers.getContractFactory("AvaxLottery");
   const lottery = await AvaxLottery.deploy();
 

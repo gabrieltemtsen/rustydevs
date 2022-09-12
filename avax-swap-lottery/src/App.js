@@ -11,6 +11,7 @@ const lotteryAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
 function App() {
 
+  const [ticketNumber, setTicketnumber] = useState(0);
   const [ticket, setTicket] = useState([{
     text: '',
     numbers: []
@@ -56,6 +57,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={getTickets}>Total tickets</button>
+      {ticketNumber}
     </div>
   );
 }
