@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="mt-5 footer pt-100 img-bg" >
+    <footer class="mt-5 footer pt-100 img-bg footer-image" >
                 <div className="row">
                     <div className="col-xl-4 col-lg-4 col-md-6">
                         <div className="footer-widget mb-60 wow fadeInLeft" data-wow-delay=".2s">
@@ -10,9 +10,9 @@ const Footer = () => {
                             <p className="mb-30">AvaxSpeedySwap the Future of Farming Finance.</p>
                             <div className="footer-social-links">
                                 <ul>
-                                    <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i className="lni lni-instagram-original"></i></a></li>
+                                    <li><i className="lni lni-twitter-filled"></i></li>
+                                    <li><i className="lni lni-linkedin-original"></i></li>
+                                    <li><i className="lni lni-instagram-original"></i></li>
                                 </ul>
                             </div>
                         </div>

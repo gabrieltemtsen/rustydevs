@@ -1,11 +1,18 @@
 
-import './App.css';
+import './assets/css/main.css';
+import './assets/css/bootstrap-5.0.0-alpha-1.min.css';
+import './assets/css/LineIcons.2.0.css';
+import './assets/css/animate.css';
+import './assets/js/bootstrap.bundle-5.0.0.alpha-1-min.js';
+
+
+
+
 import { useState } from 'react';
 
 import Nav from './components/Nav';
 import Header from './pages/Header';
 import Trade from './pages/Trade';
-import Swap from './pages/Swap';
 import Feature from './pages/Feature';
 import About from './pages/About';
 import Footer from './components/Footer';
@@ -68,7 +75,6 @@ function App() {
       <Nav />
       <Header />
       <Trade />
-      <Swap />
       <Feature />
       <About />
       <Footer />

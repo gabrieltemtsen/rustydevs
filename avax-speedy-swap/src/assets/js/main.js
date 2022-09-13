@@ -14,8 +14,6 @@ function fadeout() {
 }
 
 
-
-
 /*=====================================
 Sticky
 ======================================= */
@@ -29,8 +27,6 @@ window.onscroll = function () {
 		header_navbar.classList.remove("sticky");
 	}
 
-
-
 	// show or hide the back-top-top button
 	var backToTo = document.querySelector(".scroll-top");
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -39,7 +35,6 @@ window.onscroll = function () {
 		backToTo.style.display = "none";
 	}
 };
-
 
 // section menu active
 function onScroll(event) {
@@ -59,10 +54,7 @@ function onScroll(event) {
 		}
 	}
 };
-
 window.document.addEventListener('scroll', onScroll);
-
-
 //===== close navbar-collapse when a  clicked
 let navbarToggler = document.querySelector(".navbar-toggler");
 var navbarCollapse = document.querySelector(".navbar-collapse");
@@ -77,68 +69,3 @@ navbarToggler.addEventListener('click', function () {
 	navbarToggler.classList.toggle("active");
 });
 
-
-
-// WOW active
-new WOW().init();
-
-
-
-
-// count down timer
-const countDownClock = (number = 100, format = 'seconds') => {
-
-	const d = document;
-	const daysElement = d.querySelector('.days');
-	const hoursElement = d.querySelector('.hours');
-	const minutesElement = d.querySelector('.minutes');
-	const secondsElement = d.querySelector('.seconds');
-	let countdown;
-	convertFormat(format);
-
-
-	function convertFormat(format) {
-		switch (format) {
-			case 'seconds':
-				return timer(number);
-			case 'minutes':
-				return timer(number * 60);
-			case 'hours':
-				return timer(number * 60 * 60);
-			case 'days':
-				return timer(number * 60 * 60 * 24);
-		}
-	}
-
-	function timer(seconds) {
-		const now = Date.now();
-		const then = now + seconds * 1000;
-
-		countdown = setInterval(() => {
-			const secondsLeft = Math.round((then - Date.now()) / 1000);
-
-			if (secondsLeft <= 0) {
-				clearInterval(countdown);
-				return;
-			};
-
-			displayTimeLeft(secondsLeft);
-
-		}, 1000);
-	}
-
-	function displayTimeLeft(seconds) {
-		daysElement.textContent = Math.floor(seconds / 86400);
-		hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
-		minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
-		secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
-	}
-}
-
-
-/*
-	start countdown
-	enter number and format
-	days, hours, minutes or seconds
-*/
-countDownClock(90, 'days');

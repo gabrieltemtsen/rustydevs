@@ -5,7 +5,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+.footer-image{
+  background-image: url('../img/common-bg.jpg')
+}
 body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
@@ -1152,7 +1154,7 @@ p {
   width: 100%;
   z-index: 99;
   transition: all 0.3s ease-out 0s;
-  background: $darkred;
+  background:#DD3A3A;
 }
 
 .sticky {

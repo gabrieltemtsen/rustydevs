@@ -7,7 +7,7 @@ const About = () => {
                 <div className="row align-items-center">
                     <div className="col-xl-6 col-lg-6">
                         <div className="about-img mb-30">
-                            <img src="assets/img/about-img.svg" alt="image" className=" wow fadeInLeft" data-wow-delay=".4s" />
+                            <img src="./assets/img/about-img.svg"  className=" wow fadeInLeft" data-wow-delay=".4s" />
                         </div>
                     </div>
                     <div className="col-xl-6 col-lg-6">
