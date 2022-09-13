@@ -2,8 +2,17 @@
 import './App.css';
 import { useState } from 'react';
 
+import Nav from './components/Nav';
+import Header from './pages/Header';
+import Trade from './pages/Trade';
+import Swap from './pages/Swap';
+import Feature from './pages/Feature';
+import About from './pages/About';
+import Footer from './components/Footer';
+
 import {ethers} from 'ethers';
 import AvaxLottery from './artifacts/contracts/AvaxLottery.sol/AvaxLottery.json';
+
 
 const lotteryAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
@@ -55,10 +64,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={getTickets}>Total tickets</button>
-      {ticketNumber}
-    </div>
+    <>
+      <Nav />
+      <Header />
+      <Trade />
+      <Swap />
+      <Feature />
+      <About />
+      <Footer />
+    </>
+    
   );
 }
 
