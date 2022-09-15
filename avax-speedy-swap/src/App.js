@@ -14,7 +14,6 @@ import Nav from './components/Nav';
 import Header from './pages/Header';
 import Trade from './pages/Trade';
 import Feature from './pages/Feature';
-import About from './pages/About';
 import Footer from './components/Footer';
 
 import {ethers} from 'ethers';
@@ -32,6 +31,7 @@ function App() {
     text: '',
     numbers: []
   }]);
+
 
   
   async function requestAccount() {
@@ -77,11 +77,10 @@ function App() {
   return (
     <>
     <button> gabu </button>
-      <Nav />
+      <Nav connectWallet={requestAccount}/>
       <Header />
       <Trade />
       <Feature />
-      <About />
       <Footer />
     </>
     

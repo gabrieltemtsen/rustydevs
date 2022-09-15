@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Nav = () => {
+const Nav = ({connectWallet}) => {
   return (
     <header className="header navbar-area">
             <div className="container">
@@ -35,8 +35,7 @@ const Nav = () => {
                                     
                                     <li className="nav-item ">
                                         <a className="page-scroll">
-                                            <button  className="theme-btn  btn-primary btn-sm">
-                                            Connect wallet
+                                            <button onClick={connectWallet} className="theme-btn  btn-primary btn-sm">Connect Wallet
                                             </button>
                                         </a>
                                     </li>
