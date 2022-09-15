@@ -21,18 +21,19 @@ import {ethers} from 'ethers';
 import AvaxLottery from './artifacts/contracts/AvaxLottery.sol/AvaxLottery.json';
 
 
-const lotteryAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const lotteryAddress = '0xf8c94bd32DAc1912598e30315d18CD55eFc18b5E';
 
 
 
 function App() {
 
-  const [ticketNumber, setTicketnumber] = useState(0);
+  const [getLength, ticketNumber, setTicketnumber] = useState(0);
   const [ticket, setTicket] = useState([{
     text: '',
     numbers: []
   }]);
 
+  
   async function requestAccount() {
     await window.ethereum.request({method: 'eth_requestAccounts'})
   }
@@ -60,6 +61,8 @@ function App() {
       const transaction = new ethers.Contract(lotteryAddress, AvaxLottery.abi, signer);
       try {
         const data = await transaction.create_ticket(ticket);
+        const getter = await transaction.get_tickets();
+        console.log('YEAHHHTISKETNO: ', getter)
         console.log('data', data);
       }
       catch (error) {
@@ -68,10 +71,12 @@ function App() {
     }
 
     setTicket('');
+    
   }
-
+  createTicket();
   return (
     <>
+    <button> gabu </button>
       <Nav />
       <Header />
       <Trade />

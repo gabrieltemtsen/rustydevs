@@ -35,7 +35,7 @@ const Nav = () => {
                                     
                                     <li className="nav-item ">
                                         <a className="page-scroll">
-                                            <button className="theme-btn  btn-primary btn-sm">
+                                            <button  className="theme-btn  btn-primary btn-sm">
                                             Connect wallet
                                             </button>
                                         </a>
