@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
-const Header = () => {
+const Header = ({getLength}) => {
   return (
     <section id="home" className="hero-section">
             <div className="shapes">
@@ -15,8 +16,8 @@ const Header = () => {
                             <h1 className="text-white wow fadeInDown" data-wow-delay=".2s">Trade, Stake and win Lottery on AvaxSpeedySwap</h1>
                             <p className="text-white wow fadeInLeft"  data-wow-delay=".4s">Swap your tokens and play lottery on AvaxSpeedySwap,
                                  with the speed and low cost features on the Avalanche network.</p>
-                            <a href="#" className="theme-btn wow fadeInUp"  data-wow-delay=".6s">Connect wallet</a>
-                            <a href="swap.html" className="theme-btn wow fadeInUp theme-btnhover"  data-wow-delay=".6s">Trade Now</a>
+                            <a className="theme-btn wow fadeInUp"  data-wow-delay=".6s">Connect wallet</a>
+                            <a onClick={getLength} className="theme-btn wow fadeInUp theme-btnhover"  data-wow-delay=".6s">Trade Now</a>
                         </div>
                     </div>
                     <div className="col-xl-5 col-lg-5">

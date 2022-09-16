@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
 const Footer = () => {
   return (
-    <footer class="mt-5 footer pt-100 img-bg footer-image" >
+    <footer className="mt-5 footer pt-100 img-bg footer-image" >
                 <div className="row">
                     <div className="col-xl-4 col-lg-4 col-md-6">
                         <div className="footer-widget mb-60 wow fadeInLeft" data-wow-delay=".2s">
@@ -36,7 +37,7 @@ const Footer = () => {
                    
                    
                 <div className="copyright-area">
-                    <p className="mb-0 text-white text-center">Template By <a href="https://uideck.com" rel="nofollow" target="_blank">UIdeck</a></p>
+                    <p className="mb-0 text-white text-center">Template By <a href="https://uideck.com" rel="nofollow noreferrer" target="_blank">UIdeck</a></p>
                 </div>
             </div>
         </footer>

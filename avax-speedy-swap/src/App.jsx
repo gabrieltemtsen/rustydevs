@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import './assets/css/main.css';
 import './assets/css/bootstrap-5.0.0-alpha-1.min.css';
@@ -15,6 +16,7 @@ import Header from './pages/Header';
 import Trade from './pages/Trade';
 import Feature from './pages/Feature';
 import Footer from './components/Footer';
+// import WalletCard from './WalletCard';
 
 import {ethers} from 'ethers';
 import AvaxLottery from './artifacts/contracts/AvaxLottery.sol/AvaxLottery.json';
@@ -53,33 +55,32 @@ function App() {
   }
 
   async function createTicket() {
-    if (!ticket) return ;
+    // if (!ticket) return ;
 
     if (typeof window.ethereum !== 'undefined'){
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
+      console.log('signer@: ',signer)
       const transaction = new ethers.Contract(lotteryAddress, AvaxLottery.abi, signer);
       try {
-        const data = await transaction.create_ticket(ticket);
+        // const data = await transaction.create_ticket(ticket);
         const getter = await transaction.get_tickets();
         console.log('YEAHHHTISKETNO: ', getter)
-        console.log('data', data);
+        // console.log('data', data);
       }
       catch (error) {
         console.log('error:', error);
       }
     }
-
-    setTicket('');
     
   }
-  createTicket();
+
   return (
     <>
-    <button> gabu </button>
       <Nav connectWallet={requestAccount}/>
-      <Header />
+      <Header getLength={createTicket} />
       <Trade />
+      {/* <WalletCard/> */}
       <Feature />
       <Footer />
     </>

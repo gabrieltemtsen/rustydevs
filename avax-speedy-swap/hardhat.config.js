@@ -1,10 +1,10 @@
-require("@nomicfoundation/hardhat-toolbox");
-
 /** @type import('hardhat/config').HardhatUserConfig */
+require("@nomiclabs/hardhat-ethers")
+ 
 module.exports = {
-  solidity: "0.8.9",
+  solidity: "0.8.17",
   paths: {
-    artifacts: './src/artifacts'
+    artifacts: './src/artifacts',
   },
   networks: {
     fuji: {
@@ -12,5 +12,5 @@ module.exports = {
       accounts: [`0x8b1143d22ecb317d271bc024f946c97bc6246061b8cffade562cdcfeaa9ef195`],
       chainId: 43113,
     }
-  }
-};
+  },
+}
